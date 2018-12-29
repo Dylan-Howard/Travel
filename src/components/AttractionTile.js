@@ -8,12 +8,8 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-class AttractionTile extends Component {
-  state: {
-    blurValue: 1,
-  }
-
-  const { image, preImage, title, description } = this.props.attraction;
+const AttractionTile = ({ attraction, tileSize }) => {
+  const { image, preImage, title, description } = attraction;
   const {
     attractionItem,
     attractionItem_lg,
@@ -29,8 +25,7 @@ class AttractionTile extends Component {
     attractionDescription_lg,
   } = styles;
 
-  render() {
-    if (this.props.tileSize === 'large') {
+    if (tileSize === 'large') {
       return (
         <TouchableOpacity
           style={attractionItem_lg}
@@ -68,7 +63,6 @@ class AttractionTile extends Component {
         </View>
       </TouchableOpacity>
     );
-  }
 };
 
 const styles = StyleSheet.create({
