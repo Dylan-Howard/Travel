@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import axios from 'axios';
 import AttractionTile from '../components/AttractionTile';
+import AttractionTileLarge from '../components/AttractionTileLarge';
 
 class AttractionsScreen extends Component {
   state = {
@@ -27,11 +28,15 @@ class AttractionsScreen extends Component {
 
   renderAttractions() {
     return this.state.attractions.map(attraction =>
-      <AttractionTile key={attraction.title} attraction={attraction} />
+      <AttractionTile key={attraction.title} attraction={attraction} tileSize="small" />
     );
   }
 
-
+  renderAttractionsLarge() {
+    return this.state.attractions.map(attraction =>
+      <AttractionTileLarge key={attraction.title} attraction={attraction} tileSize="large" />
+    );
+  }
 
   render() {
     return (
@@ -46,6 +51,15 @@ class AttractionsScreen extends Component {
           </View>
           <ScrollView horizontal style={styles.blockHorizontalScroll}>
             {this.renderAttractions()}
+          </ScrollView>
+        </View>
+
+        <View style={styles.blockContainer}>
+          <View style={styles.container}>
+            <Text style={styles.blockTitle}>Tangier</Text>
+          </View>
+          <ScrollView horizontal style={styles.blockHorizontalScroll}>
+            {this.renderAttractionsLarge()}
           </ScrollView>
         </View>
       </View>
@@ -82,6 +96,7 @@ const styles = StyleSheet.create({
     marginLeft: 40,
   },
   blockHorizontalScroll: {
+
   },
 });
 

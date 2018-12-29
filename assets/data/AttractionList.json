@@ -1,22 +1,25 @@
 [
   {
-
-    "image": "https://images.unsplash.com/photo-1522509585149-c9cd39d1ff08?ixlib=rb-1.2.1&auto=format&fit=crop&w=773",
+    "image": "https://images.unsplash.com/photo-1522509585149-c9cd39d1ff08?ixlib=rb-1.2.1&auto=format&fit=crop&w=680",
+    "preImage": "https://images.unsplash.com/photo-1522509585149-c9cd39d1ff08?ixlib=rb-1.2.1&auto=format&fit=crop&w=100",
     "title": "Kasbah",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a vehicula magna, quis condimentum risus."
   },
   {
-    "image": "https://images.unsplash.com/photo-1515386474292-47555758ef2e?ixlib=rb-1.2.1&auto=format&fit=crop&w=773",
+    "image": "https://images.unsplash.com/photo-1515386474292-47555758ef2e?ixlib=rb-1.2.1&auto=format&fit=crop&w=680",
+    "preImage": "https://images.unsplash.com/photo-1515386474292-47555758ef2e?ixlib=rb-1.2.1&auto=format&fit=crop&w=100",
     "title": "Medina",
     "description": "Vestibulum condimentum suscipit laoreet. Cras aliquam mattis enim nec finibus."
   },
   {
-    "image": "https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?ixlib=rb-1.2.1&auto=format&fit=crop&w=733",
+    "image": "https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?ixlib=rb-1.2.1&auto=format&fit=crop&w=680",
+    "preImage": "https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?ixlib=rb-1.2.1&auto=format&fit=crop&w=100",
     "title": "Tamnougalt",
     "description": "Mauris sagittis quam scelerisque, suscipit ipsum quis, consequat velit. Maecenas posuere mi mauris, a luctus felis hendrerit venenatis."
   },
   {
-    "image": "https://images.unsplash.com/photo-1527338611623-4e242563220a?ixlib=rb-1.2.1&auto=format&fit=crop&w=733",
+    "image": "https://images.unsplash.com/photo-1527338611623-4e242563220a?ixlib=rb-1.2.1&auto=format&fit=crop&w=680",
+    "preImage": "https://images.unsplash.com/photo-1527338611623-4e242563220a?ixlib=rb-1.2.1&auto=format&fit=crop&w=100",
     "title": "Aït Benhaddou",
     "description": "Mauris sagittis quam scelerisque, suscipit ipsum quis, consequat velit. Maecenas posuere mi mauris, a luctus felis hendrerit venenatis."
   }
