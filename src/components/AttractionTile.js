@@ -8,8 +8,12 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-const AttractionTile = ({ attraction, tileSize }) => {
-  const { image, preImage, title, description } = attraction;
+class AttractionTile extends Component {
+  state: {
+    blurValue: 1,
+  }
+
+  const { image, preImage, title, description } = this.props.attraction;
   const {
     attractionItem,
     attractionItem_lg,
@@ -25,43 +29,47 @@ const AttractionTile = ({ attraction, tileSize }) => {
     attractionDescription_lg,
   } = styles;
 
-  if (tileSize === 'large') {
+  render() {
+    if (this.props.tileSize === 'large') {
+      return (
+        <TouchableOpacity
+          style={attractionItem_lg}
+          activeOpacity={0.6}
+        >
+          <View style={attractionImageContainer_lg}>
+            <Image
+              style={attractionImage}
+              source={{ uri: image }}
+              loadingSourceIndicator={{ uri: preImage }}
+            />
+          </View>
+          <View style={attractionTextContainer_lg}>
+            <Text style={attractionTitle_lg}>{title}</Text>
+            <Text style={attractionDescription_lg}>{description}</Text>
+          </View>
+        </TouchableOpacity>
+      );
+    }
     return (
       <TouchableOpacity
-        style={attractionItem_lg}
+        style={attractionItem}
         activeOpacity={0.6}
       >
-        <View style={attractionImageContainer_lg}>
-          <Text>{image}</Text>
+        <View style={attractionImageContainer}>
+          <Image
+            style={attractionImage}
+            source={{ uri: image }}
+            loadingSourceIndicator={{ uri: preImage }}
+          />
         </View>
-        <View style={attractionTextContainer_lg}>
-          <Text style={attractionTitle_lg}>{title}</Text>
-          <Text style={attractionDescription_lg}>{description}</Text>
+        <View style={attractionTextContainer}>
+          <Text style={attractionTitle}>{title}</Text>
+          <Text style={attractionDescription}>{description}</Text>
         </View>
       </TouchableOpacity>
     );
   }
-  return (
-    <TouchableOpacity
-      style={attractionItem}
-      activeOpacity={0.6}
-    >
-      <View style={attractionImageContainer}>
-        <Text>{image}</Text>
-      </View>
-      <View style={attractionTextContainer}>
-        <Text style={attractionTitle}>{title}</Text>
-        <Text style={attractionDescription}>{description}</Text>
-      </View>
-    </TouchableOpacity>
-  );
 };
-
-// <Image
-//   style={attractionImage}
-//   source={{ uri: image }}
-//   loadingSourceIndicator={{ uri: preImage }}
-// />
 
 const styles = StyleSheet.create({
   attractionItem: {
