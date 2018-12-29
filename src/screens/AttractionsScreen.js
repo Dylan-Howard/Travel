@@ -21,23 +21,17 @@ class AttractionsScreen extends Component {
   }
 
   componentWillMount() {
-    // axios.get('https://github.com/Dylan-Howard/Travel/blob/master/assets/data/AttractionList.json')
-    //   .then(response => this.setState({ attractions: response.data }));
-    axios.get('https://rallycoding.herokuapp.com/api/music_albums')
-      .then(response => this.setState({ media: response.data }));
+    axios.get('https://raw.githubusercontent.com/Dylan-Howard/Travel/master/assets/data/AttractionList.json')
+    .then(response => this.setState({ attractions: response.data }));
   }
 
   renderAttractions() {
-    return this.state.media.map(media =>
-      <Text>
-        {media.title}
-      </Text>
+    return this.state.attractions.map(attraction =>
+      <AttractionTile key={attraction.title} attraction={attraction} />
     );
   }
 
-  // return this.state.attractions.map(attraction =>
-  //   <AttractionTile attraction={attraction} />
-  // );
+
 
   render() {
     return (
@@ -58,48 +52,6 @@ class AttractionsScreen extends Component {
     );
   }
 }
-
-// <TouchableOpacity
-//   style={styles.attractionItem}
-//   activeOpacity={.6}
-//   onPress={() => this.props.navigation.navigate('Attraction')}>
-//   <Image
-//     source={require('../../assets/images/precious-promises.jpg')}
-//     style={styles.attractionImage}
-//   />
-//   <View style={styles.attractionTextContainer}>
-//     <Text style={styles.attractionTitle}>{attractions.a001.title}</Text>
-//     <Text style={styles.attractionDescription}>{attractions.a001.description}</Text>
-//   </View>
-// </TouchableOpacity>
-//
-// <TouchableOpacity
-//   style={styles.attractionItem}
-//   activeOpacity={.6}
-//   onPress={() => this.props.navigation.navigate('Attraction')}>
-//   <Image
-//     source={require('../../assets/images/precious-promises.jpg')}
-//     style={styles.attractionImage}
-//   />
-//   <View style={styles.attractionTextContainer}>
-//     <Text style={styles.attractionTitle}>{attractions.a002.title}</Text>
-//     <Text style={styles.attractionDescription}>{attractions.a002.description}</Text>
-//   </View>
-// </TouchableOpacity>
-//
-// <TouchableOpacity
-//   style={styles.attractionItem}
-//   activeOpacity={.6}
-//   onPress={() => this.props.navigation.navigate('Attraction')}>
-//   <Image
-//     source={require('../../assets/images/precious-promises.jpg')}
-//     style={styles.attractionImage}
-//   />
-//   <View style={styles.attractionTextContainer}>
-//     <Text style={styles.attractionTitle}>{attractions.a003.title}</Text>
-//     <Text style={styles.attractionDescription}>{attractions.a003.description}</Text>
-//   </View>
-// </TouchableOpacity>
 
 const styles = StyleSheet.create({
   container: {
@@ -122,9 +74,6 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     marginTop: 3,
     marginLeft: -10,
-  },
-  blockContainer: {
-    flex: 2,
   },
   blockTitle: {
     color: '#2c3e50',

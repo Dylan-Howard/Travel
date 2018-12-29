@@ -5,6 +5,7 @@ const AttractionTile = ({ attraction }) => {
   const { image, title, description } = attraction;
   const {
     attractionItem,
+    attractionImageContainer,
     attractionImage,
     attractionTextContainer,
     attractionTitle,
@@ -16,10 +17,9 @@ const AttractionTile = ({ attraction }) => {
       style={attractionItem}
       activeOpacity={0.6}
     >
-      <Image
-        source={{ uri: image }}
-        style={attractionImage}
-      />
+      <View style={attractionImageContainer}>
+        <Image source={{ uri: image }} style={attractionImage} />
+      </View>
       <View style={attractionTextContainer}>
         <Text style={attractionTitle}>{title}</Text>
         <Text style={attractionDescription}>{description}</Text>
@@ -46,11 +46,14 @@ const styles = StyleSheet.create({
     }),
     margin: 20,
   },
-  attractionImage: {
-    flex: 1,
-    width: '100%',
+  attractionImageContainer: {
+    width: 200,
     height: 140,
-    resizeMode: 'cover',
+    borderRadius: 20,
+  },
+  attractionImage: {
+    width: 200,
+    height: 140,
     borderRadius: 20,
   },
   attractionTextContainer: {
