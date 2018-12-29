@@ -6,23 +6,38 @@
 
 import React, { Component } from 'react';
 import {
-  Platform,
   StyleSheet,
   Text,
   View,
   ScrollView,
 } from 'react-native';
-// import { Actions } from 'react-native-router-flux';
+import axios from 'axios';
 import AttractionTile from '../components/AttractionTile';
 
 class AttractionsScreen extends Component {
-  state = { attractions: [] }
+  state = {
+    attractions: [],
+    media: [],
+  }
 
   componentWillMount() {
+    // axios.get('https://github.com/Dylan-Howard/Travel/blob/master/assets/data/AttractionList.json')
+    //   .then(response => this.setState({ attractions: response.data }));
     axios.get('https://rallycoding.herokuapp.com/api/music_albums')
-      .then(response => this.setState({ media: response.data }))
-      .then(() => this.props.mediaSet(this.state.media[0]));
+      .then(response => this.setState({ media: response.data }));
   }
+
+  renderAttractions() {
+    return this.state.media.map(media =>
+      <Text>
+        {media.title}
+      </Text>
+    );
+  }
+
+  // return this.state.attractions.map(attraction =>
+  //   <AttractionTile attraction={attraction} />
+  // );
 
   render() {
     return (
@@ -36,10 +51,7 @@ class AttractionsScreen extends Component {
             <Text style={styles.blockTitle}>Tangier</Text>
           </View>
           <ScrollView horizontal style={styles.blockHorizontalScroll}>
-            <AttractionTile attraction={this.a001} />
-            <AttractionTile attraction={this.a002} />
-            <AttractionTile attraction={this.a003} />
-            <AttractionTile attraction={this.a004} />
+            {this.renderAttractions()}
           </ScrollView>
         </View>
       </View>
