@@ -1,0 +1,24 @@
+{
+  "attractions": [
+    {
+      "image": "https://unsplash.com/photos/hRRjixxRgfQ",
+      "title": "Kasbah",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a vehicula magna, quis condimentum risus."
+    },
+    {
+      "image": "https://unsplash.com/photos/aqJfoLKFz6c",
+      "title": "Medina",
+      "description": "Vestibulum condimentum suscipit laoreet. Cras aliquam mattis enim nec finibus."
+    },
+    {
+      "image": "https://unsplash.com/photos/i-P1lmY_e1w",
+      "title": "Tamnougalt",
+      "description": "Mauris sagittis quam scelerisque, suscipit ipsum quis, consequat velit. Maecenas posuere mi mauris, a luctus felis hendrerit venenatis."
+    },
+    {
+      "image": "https://unsplash.com/photos/pcbSQTQr2-I",
+      "title": "Aït Benhaddou",
+      "description": "Mauris sagittis quam scelerisque, suscipit ipsum quis, consequat velit. Maecenas posuere mi mauris, a luctus felis hendrerit venenatis."
+    }
+  ]
+}
